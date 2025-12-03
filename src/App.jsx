@@ -39,7 +39,7 @@ function App() {
       console.error(error.message);
       console.log("API not working, using backup quotes")
       const random = Math.floor(Math.random() * backupQuotes.length)
-      setRandomQuote({data: backupQuotes[randomIndex]})
+      setRandomQuote({data: backupQuotes[random]})
     } finally {
       setIsLoading(false);
     }
