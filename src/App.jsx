@@ -36,6 +36,7 @@ function App() {
           }
         });
     } catch (error) {
+      await new Promise((resolve) => setTimeout(resolve, 3000))
       console.error(error.message);
       console.log("API not working, using backup quotes")
       const random = Math.floor(Math.random() * backupQuotes.length)
