@@ -1,81 +1,59 @@
-# Random Stoic Quote Generator
+# Random Quote Machine
 
-A random stoic quote generator with sharing capabilities for Twitter and Tumblr.
+A web application displaying random philosophical quotes with social media sharing capabilities.
 
-## 🌟 Demo
+## Description
 
-[Live Demo Link](https://ash4rkk.github.io/fcc-random-quote) _(update after deployment)_
+Random Quote Machine is an interactive React application that fetches and displays inspiring quotes from the ZenQuotes API. When the API is unavailable, the application seamlessly falls back to a curated collection of Stoic philosophy quotes.
 
-## 📋 Description
+## Features
 
-A React application that displays random quotes from Stoic philosophers. Created as part of the freeCodeCamp challenge.
+- Automatic random quote generation on application load
+- One-click quote refresh functionality
+- Smooth animated loading states
+- Direct sharing to Twitter and Tumblr
+- Fallback system with 10 curated Stoic quotes
+- Responsive design with elegant visual effects
 
-### Features:
-- 📖 Display random Stoic quotes
-- 🔄 Button to generate new quotes
-- 🐦 Share on Twitter
-- 📝 Share on Tumblr
-- ⏳ Loading animation while fetching quotes
-- 🎨 Modern UI with blur effect
+## Technologies
 
-## 🚀 Technologies
+- **React** - Frontend framework with Hooks (useState, useEffect, useCallback)
+- **ZenQuotes API** - Primary quote source
+- **Font Awesome** - Icon library for social media buttons
+- **CSS3** - Styling with blur and gradient effects
 
-- React
-- JavaScript (ES6+)
-- CSS3
-- Font Awesome (icons)
-- Stoic Quote API
+## Installation
 
-## 💻 Installation
-
-1. Clone the repository:
 ```bash
-git clone https://github.com/ash4rkk/fcc-random-quote.git
-```
+# Clone the repository
+git clone https://github.com/yourusername/random-quote-machine.git
 
-2. Navigate to project folder:
-```bash
-cd fcc-random-quote
-```
+# Navigate to project directory
+cd random-quote-machine
 
-3. Install dependencies:
-```bash
+# Install dependencies
 npm install
+
+# Start development server
+npm start
 ```
 
-4. Run the application:
-```bash
-npm run dev
-```
+## Usage
 
-## 🔧 Usage
+1. Open the application in your browser
+2. A random quote will automatically load
+3. Click "New Quote!" to fetch a new quote
+4. Use the Twitter or Tumblr icons to share quotes on social media
 
-After running the application:
-1. The app automatically loads the first quote
-2. Click "New Quote!" to generate a new quote
-3. Use Twitter or Tumblr icons to share the quote
+## How It Works
 
-## 📦 Build
+The application fetches quotes from the ZenQuotes API with built-in error handling. A 3-second loading animation provides visual feedback during API calls. If the API is unreachable, the app automatically uses backup quotes from Marcus Aurelius, Epictetus, and Seneca.
 
-To build the application for production:
-```bash
-npm run build
-```
+## License
 
-## 🤝 Contributing
+This project is open source and available under the MIT License.
 
-Pull requests are welcome! For major changes, please open an issue first to discuss proposed changes.
+## Acknowledgments
 
-## 📄 License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-## 👤 Author
-
-**ash4rkk**
-- GitHub: [@ash4rkk](https://github.com/ash4rkk)
-
-## 🙏 Acknowledgments
-
-- [freeCodeCamp](https://www.freecodecamp.org/) for project inspiration
-- [Stoic Quote API](https://stoic.tekloon.net/) for providing the quotes
+- Quotes provided by [ZenQuotes API](https://zenquotes.io/)
+- Icons by [Font Awesome](https://fontawesome.com/)
