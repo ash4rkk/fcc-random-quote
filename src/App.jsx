@@ -8,7 +8,7 @@ function App() {
     setIsLoading(true);
     const url = 'https://stoic.tekloon.net/stoic-quote';
     try {
-      const response = await fetch('/api/stoic-quote');
+      const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
