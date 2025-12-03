@@ -6,7 +6,7 @@ function App() {
 
   const getQuote = async () => {
     setIsLoading(true);
-    const url = 'https://stoic.tekloon.net/stoic-quote';
+    const url = 'https://api.allorigins.win/raw?url=https://stoic.tekloon.net/stoic-quote';
     try {
       const response = await fetch(url);
       if (!response.ok) {
