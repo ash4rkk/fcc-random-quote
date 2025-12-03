@@ -6,15 +6,22 @@ function App() {
 
   const getQuote = async () => {
     setIsLoading(true);
-    const url = 'https://api.allorigins.win/raw?url=https://stoic.tekloon.net/stoic-quote';
+    const url = `https://zenquotes.io/api/random`;
     try {
-      const response = await fetch(url);
+      const response = await fetch(url, {
+        cache: 'no-store'
+      });
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
       const result = await response.json();
       await new Promise((resolve) => setTimeout(resolve, 5000));
-      setRandomQuote(result);
+        setRandomQuote({
+          data: {
+            quote: result[0].q,
+            author: result[0].a
+          }
+        });
     } catch (error) {
       console.error(error.message);
     } finally {
@@ -32,10 +39,10 @@ function App() {
     ? `https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=${encodeURIComponent(randomQuote.data.author)}&content=${encodeURIComponent(randomQuote.data.quote)}&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button`
     : '#';
   return (
-    <div class="container">
-  <div class="content-wrapper">
-    <div class="blur-effect" aria-hidden="true">
-      <div class="gradient-shape"></div>
+    <div className="container">
+  <div className="content-wrapper">
+    <div className="blur-effect" aria-hidden="true">
+      <div className="gradient-shape"></div>
     </div>
     <div id='wrapper'>
       <div id='quote-box' className={isLoading ? 'loading' : ''}>
