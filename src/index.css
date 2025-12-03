@@ -95,7 +95,7 @@ div {
 #quote-box {
   border-radius: 3px;
   position: relative;
-  width: 450px;
+  max-width: 450px;
   padding: 40px 50px;
   display: table;
   background-color: var(--p-color);
