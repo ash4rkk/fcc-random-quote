@@ -19,7 +19,7 @@ function App() {
 
   const getQuote = async () => {
     setIsLoading(true);
-    const url = `/api`;
+    const url = `https://zenquotes.io/api/random`;
     try {
       const response = await fetch(url, {
         cache: 'no-store'
