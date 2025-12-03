@@ -1,12 +1,25 @@
 import { useEffect, useState } from 'react';
 
+const backupQuotes = [
+  { quote: "The happiness of your life depends upon the quality of your thoughts.", author: "Marcus Aurelius" },
+  { quote: "Wealth consists not in having great possessions, but in having few wants.", author: "Epictetus" },
+  { quote: "He who fears death will never do anything worthy of a living man.", author: "Seneca" },
+  { quote: "The best revenge is not to be like your enemy.", author: "Marcus Aurelius" },
+  { quote: "It is not that we have a short time to live, but that we waste a lot of it.", author: "Seneca" },
+  { quote: "If it is not right, do not do it, if it is not true, do not say it.", author: "Marcus Aurelius" },
+  { quote: "No man is free who is not master of himself.", author: "Epictetus" },
+  { quote: "We suffer more often in imagination than in reality.", author: "Seneca" },
+  { quote: "You have power over your mind - not outside events. Realize this, and you will find strength.", author: "Marcus Aurelius" },
+  { quote: "First say to yourself what you would be; and then do what you have to do.", author: "Epictetus" }
+];
+
 function App() {
   const [randomQuote, setRandomQuote] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const getQuote = async () => {
     setIsLoading(true);
-    const url = `https://zenquotes.io/api/random`;
+    const url = `/api`;
     try {
       const response = await fetch(url, {
         cache: 'no-store'
@@ -15,7 +28,7 @@ function App() {
         throw new Error(`Response status: ${response.status}`);
       }
       const result = await response.json();
-      await new Promise((resolve) => setTimeout(resolve, 5000));
+      await new Promise((resolve) => setTimeout(resolve, 3000));
         setRandomQuote({
           data: {
             quote: result[0].q,
@@ -24,6 +37,9 @@ function App() {
         });
     } catch (error) {
       console.error(error.message);
+      console.log("API not working, using backup quotes")
+      const random = Math.floor(Math.random() * backupQuotes.length)
+      setRandomQuote({data: backupQuotes[randomIndex]})
     } finally {
       setIsLoading(false);
     }
